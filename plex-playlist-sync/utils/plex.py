@@ -93,7 +93,7 @@ def _get_available_plex_tracks(plex: PlexServer, tracks: List[Track]) -> List:
                         None, s.album().title.lower(), track.album.lower()
                     ).quick_ratio()
 
-                    if album_similarity >= 0.9:
+                    if album_similarity >= 0.2:
                         plex_tracks.extend(s)
                         found = True
                         break
