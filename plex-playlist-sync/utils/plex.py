@@ -70,7 +70,7 @@ def _get_available_plex_tracks(plex: PlexServer, tracks: List[Track]) -> List:
             logging.info("retrying search for %s", track.title)
             try:
                 search += plex.search(
-                    track.title.split("(")[0], mediatype="track", limit=5
+                    track.title.split("(")[0], mediatype="track", limit=25
                 )
                 logging.info("search for %s successful", track.title)
             except BadRequest:
@@ -93,7 +93,7 @@ def _get_available_plex_tracks(plex: PlexServer, tracks: List[Track]) -> List:
                         None, s.album().title.lower(), track.album.lower()
                     ).quick_ratio()
 
-                    if album_similarity >= 0.2:
+                    if album_similarity >= 0:
                         plex_tracks.extend(s)
                         found = True
                         break
