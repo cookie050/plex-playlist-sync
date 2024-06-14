@@ -12,7 +12,7 @@ from .plex import update_or_create_plex_playlist
 def _get_dz_playlists(
     dz: deezer.Client(),
     userInputs: UserInputs,
-    suffix: str = " - Deezer",
+    suffix: str = "",
 ) -> List[Playlist]:
     """Get metadata for playlists in the given user_id.
 
