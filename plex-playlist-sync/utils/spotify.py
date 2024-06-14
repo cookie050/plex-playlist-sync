@@ -9,7 +9,7 @@ from .plex import update_or_create_plex_playlist
 
 
 def _get_sp_user_playlists(
-    sp: spotipy.Spotify, user_id: str, suffix: str = " - Spotify"
+    sp: spotipy.Spotify, user_id: str, suffix: str = ""
 ) -> List[Playlist]:
     """Get metadata for playlists in the given user_id.
 
